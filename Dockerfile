@@ -3,7 +3,7 @@ WORKDIR /go/src/app
 COPY src/simplegoweb .
 RUN CGO_ENABLED=0 GOOS=linux go build -a -o goweb .
 
-FROM alpine:3.20
+FROM alpine:3.21
 RUN apk add --no-cache tzdata
 ENV PORT=8080
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
